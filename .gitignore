@@ -318,7 +318,7 @@ dist-ssr
 
 .eslintrc.cjs
 codux.config.json
-/_codux
+src/_codux
 vite.config.ts
 tsconfig.json
 vite-env.d.ts
