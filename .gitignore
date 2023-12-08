@@ -324,3 +324,4 @@ tsconfig.json
 vite-env.d.ts
 /component-templates
 tsconfig.node.json
+/public
