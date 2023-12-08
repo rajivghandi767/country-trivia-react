@@ -315,3 +315,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw
+
+.eslintrc.cjs
+codux.config.json
+/_codux
+vite.config.ts
+tsconfig.json
+vite-env.d.ts
+/component-templates
