@@ -6,8 +6,7 @@ type Props = {
 };
 
 function StatBar(props: Props) {
-  return;
-  <>
+  return (
     <div>
       <p>
         Questions: {props.currentQuestion}/{props.totalQuestions}
@@ -15,7 +14,7 @@ function StatBar(props: Props) {
       <p>Correct: {props.correct}</p>
       <p>Incorrect: {props.incorrect}</p>
     </div>
-  </>;
+  );
 }
 
 export default StatBar;

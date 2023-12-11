@@ -1,11 +1,11 @@
 export type GameDataPairs = {
-    data: GameDataPair[]
+    game_data: GameDataPair[]
 }
 
 export type GameDataPair = {
     Country: string;
-    Capital: string;
+    Capital: string[];
     Continent: string;
-    Flag: null;
+    Flag: string;
 
 }
