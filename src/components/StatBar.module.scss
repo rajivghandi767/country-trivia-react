@@ -1,0 +1,16 @@
+.stat-container {
+    display: flex;
+    overflow: auto;
+    flex-direction: row;
+    text-align: start;
+    gap: 10px;
+    align-content: start;
+    grid-auto-flow: column;
+    padding: 10px;
+    background-color: #000000;
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: 500;
+    font-family: Monaco, monospace;
+    border-radius: 10px;
+}

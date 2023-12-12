@@ -1,3 +1,5 @@
+import StatBar_module from "./StatBar.module.scss";
+
 type Props = {
   currentQuestion: number;
   totalQuestions: number;
@@ -7,7 +9,7 @@ type Props = {
 
 function StatBar(props: Props) {
   return (
-    <div>
+    <div className={StatBar_module["stat-container"]}>
       <p>
         Questions: {props.currentQuestion}/{props.totalQuestions}
       </p>
