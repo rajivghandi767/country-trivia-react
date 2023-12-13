@@ -8,7 +8,7 @@ type Props = {
 function QuestionPrompt(props: Props) {
   return (
     <div>
-      <h3> What is the capital city of {props.game_data.Country}</h3>
+      <h3> What is the capital city of {props.game_data.Country} ?</h3>
     </div>
   );
 }
