@@ -1,11 +1,12 @@
 import styles from "./App.module.scss";
-import game_data from "./country_capitals.json";
-import { GameDataPairs } from "./types";
+import data from "./data.json";
+import { GameDataItems } from "./types";
 import { useState } from "react";
 import StatBar from "./components/StatBar";
+import QuestionPrompt from "./components/QuestionPrompt";
 
 function App() {
-  const allGameData = game_data as GameDataPairs;
+  const allGameData = data as GameDataItems;
 
   const [currentQuestionIdx, setCurrentQuestionIdx] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState(0);
@@ -15,10 +16,11 @@ function App() {
     <div>
       <StatBar
         currentQuestion={currentQuestionIdx + 1}
-        totalQuestions={allGameData.game_data.length}
+        totalQuestions={allGameData.data.length}
         correct={correctAnswers}
         incorrect={incorrectAnswers}
       />
+      <QuestionPrompt />
     </div>
   );
 }

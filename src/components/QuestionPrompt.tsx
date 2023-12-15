@@ -1,14 +1,14 @@
-import { GameDataPair } from "../types";
+import { GameDataItem } from "../types";
 
 type Props = {
-  game_data: GameDataPair;
+  data: GameDataItem;
   onSubmit: (correct: boolean) => void;
 };
 
 function QuestionPrompt(props: Props) {
   return (
     <div>
-      <h3> What is the capital city of {props.game_data.Country} ?</h3>
+      <h3> What is the capital city of {props.data.capital}?</h3>
     </div>
   );
 }
