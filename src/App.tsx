@@ -5,13 +5,13 @@ import { useState } from "react";
 import StatBar from "./components/StatBar";
 import QuestionPrompt from "./components/QuestionPrompt";
 
-type GameDataArray = typeof all_game_data;
-type GameDataInfo = GameDataArray["data"][number];
+type TheJson = typeof all_game_data;
+type DataField = TheJson["data"];
+type ArrayValues = DataField[number];
 
-const toGameDataPair = (entry: GameDataInfo): GameDataPair => ({
-  country: entry.country,
+const toGameDataPair = (entry: ArrayValues): GameDataPair => ({
+  ...entry,
   capital: Array.isArray(entry.capital) ? entry.capital : [entry.capital],
-  continent: entry.continent,
 });
 
 function App() {
@@ -19,17 +19,17 @@ function App() {
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [incorrectAnswers, setIncorrectAnswers] = useState(0);
 
-  const game_data = toGameDataPair(all_game_data[currentQuestionIdx]);
+  const data = toGameDataPair(all_game_data.data[currentQuestionIdx]);
 
   return (
     <div>
       <StatBar
         currentQuestion={currentQuestionIdx + 1}
-        totalQuestions={all_game_data.game_data.length}
+        totalQuestions={all_game_data.data.length}
         correct={correctAnswers}
         incorrect={incorrectAnswers}
       />
-      <QuestionPrompt game_data={game_data} />
+      <QuestionPrompt data={data} />
       <button>Submit</button>
     </div>
   );

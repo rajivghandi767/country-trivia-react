@@ -1,4 +1,4 @@
-export type GameDataPairs = {
+export type Data = {
     data: GameDataPair[]
 }
 
