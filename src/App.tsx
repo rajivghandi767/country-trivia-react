@@ -23,6 +23,8 @@ function App() {
 
   return (
     <div>
+      <div>Welcome to Country Trivia!</div>
+
       <StatBar
         currentQuestion={currentQuestionIdx + 1}
         totalQuestions={all_game_data.data.length}
