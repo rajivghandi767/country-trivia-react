@@ -1,18 +1,17 @@
 // import styles from "App.module.scss";
-import all_game_data from "./country_capitals.json";
+import all_game_data from "./data.json";
 import { GameDataPair } from "./types";
 import { useState } from "react";
 import StatBar from "./components/StatBar";
 import QuestionPrompt from "./components/QuestionPrompt";
 
 type GameDataArray = typeof all_game_data;
-type GameDataInfo = GameDataArray["game_data"][number];
+type GameDataInfo = GameDataArray["data"][number];
 
 const toGameDataPair = (entry: GameDataInfo): GameDataPair => ({
-  Country: entry.Country,
-  Capital: Array.isArray(entry.Capital) ? entry.Capital : [entry.Capital],
-  Continent: entry.Continent,
-  Flag: entry.Flag,
+  country: entry.Country,
+  capital: Array.isArray(entry.Capital) ? entry.Capital : [entry.capital],
+  continent: entry.Continent,
 });
 
 function App() {
