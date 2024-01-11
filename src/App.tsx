@@ -9,9 +9,9 @@ type GameDataArray = typeof all_game_data;
 type GameDataInfo = GameDataArray["data"][number];
 
 const toGameDataPair = (entry: GameDataInfo): GameDataPair => ({
-  country: entry.Country,
-  capital: Array.isArray(entry.Capital) ? entry.Capital : [entry.capital],
-  continent: entry.Continent,
+  country: entry.country,
+  capital: Array.isArray(entry.capital) ? entry.capital : [entry.capital],
+  continent: entry.continent,
 });
 
 function App() {
