@@ -4,6 +4,7 @@ import { GameDataPair } from "./types";
 import { useState } from "react";
 import StatBar from "./components/StatBar";
 import QuestionPrompt from "./components/QuestionPrompt";
+import Answer from "./components/Answer";
 
 type TheJson = typeof all_game_data;
 type DataField = TheJson["data"];
@@ -23,16 +24,26 @@ function App() {
 
   return (
     <div>
-      <div>Welcome to Country Trivia!</div>
+      <div>
+        <h1>Welcome to Country Trivia!</h1>
+      </div>
 
-      <StatBar
-        currentQuestion={currentQuestionIdx + 1}
-        totalQuestions={all_game_data.data.length}
-        correct={correctAnswers}
-        incorrect={incorrectAnswers}
-      />
-      <QuestionPrompt data={data} />
-      <button>Submit</button>
+      <div>
+        <StatBar
+          currentQuestion={currentQuestionIdx + 1}
+          totalQuestions={all_game_data.data.length}
+          correct={correctAnswers}
+          incorrect={incorrectAnswers}
+        />
+      </div>
+
+      <div>
+        <QuestionPrompt data={data} />
+      </div>
+
+      <div>
+        <Answer />
+      </div>
     </div>
   );
 }

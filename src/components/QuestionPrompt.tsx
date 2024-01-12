@@ -13,7 +13,6 @@ function QuestionPrompt({ data }: Props) {
   return (
     <div>
       <h3>{question(data.country)}</h3>
-      <input type="text" />
     </div>
   );
 }
