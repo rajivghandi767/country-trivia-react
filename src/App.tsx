@@ -1,28 +1,52 @@
-import styles from "./App.module.scss";
-import data from "./data.json";
-import { GameDataItems } from "./types";
+// import styles from "App.module.scss";
+import all_game_data from "./data.json";
+import { GameDataPair } from "./types";
 import { useState } from "react";
 import StatBar from "./components/StatBar";
 import QuestionPrompt from "./components/QuestionPrompt";
+import Answer from "./components/Answer";
+import App_module from './App.module.scss';
+
+type TheJson = typeof all_game_data;
+type DataField = TheJson["data"];
+type ArrayValues = DataField[number];
+
+const toGameDataPair = (entry: ArrayValues): GameDataPair => ({
+    ...entry,
+    capital: Array.isArray(entry.capital) ? entry.capital : [entry.capital],
+});
 
 function App() {
-  const allGameData = data as GameDataItems;
+    const [currentQuestionIdx, setCurrentQuestionIdx] = useState(0);
+    const [correctAnswers, setCorrectAnswers] = useState(0);
+    const [incorrectAnswers, setIncorrectAnswers] = useState(0);
 
-  const [currentQuestionIdx, setCurrentQuestionIdx] = useState(0);
-  const [correctAnswers, setCorrectAnswers] = useState(0);
-  const [incorrectAnswers, setIncorrectAnswers] = useState(0);
+    const data = toGameDataPair(all_game_data.data[currentQuestionIdx]);
 
-  return (
-    <div>
-      <StatBar
-        currentQuestion={currentQuestionIdx + 1}
-        totalQuestions={allGameData.data.length}
-        correct={correctAnswers}
-        incorrect={incorrectAnswers}
-      />
-      <QuestionPrompt />
-    </div>
-  );
+    return (
+        <div className={App_module['main-container']}>
+            <div>
+                <h1>Welcome to Country Trivia!</h1>
+            </div>
+
+            <div>
+                <StatBar
+                    currentQuestion={currentQuestionIdx + 1}
+                    totalQuestions={all_game_data.data.length}
+                    correct={correctAnswers}
+                    incorrect={incorrectAnswers}
+                />
+            </div>
+
+            <div>
+                <QuestionPrompt data={data} />
+            </div>
+
+            <div>
+                <Answer />
+            </div>
+        </div>
+    );
 }
 
 export default App;

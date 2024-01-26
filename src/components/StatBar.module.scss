@@ -2,9 +2,9 @@
     display: flex;
     overflow: auto;
     flex-direction: row;
-    text-align: start;
+    text-align: center;
     gap: 10px;
-    align-content: start;
+    align-content: center;
     grid-auto-flow: column;
     padding: 10px;
     background-color: #000000;
@@ -13,4 +13,7 @@
     font-weight: 500;
     font-family: Monaco, monospace;
     border-radius: 10px;
+    align-items: center;
+    position: static;
+    justify-content: center;
 }
