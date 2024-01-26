@@ -1,4 +1,4 @@
-import { GameDataPair } from "../types";
+import { GameDataItem } from "../types";
 
 type Props = {
   data: GameDataPair;
