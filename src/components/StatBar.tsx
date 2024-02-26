@@ -9,7 +9,7 @@ type Props = {
 
 function StatBar(props: Props) {
   return (
-    <div className={StatBar_module["stat-container"]}>
+    <div>
       <p>
         Questions: {props.currentQuestion}/{props.totalQuestions}
       </p>
