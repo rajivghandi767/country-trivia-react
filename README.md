@@ -122,8 +122,8 @@ The key technologies and libraries used in the project.
 
 ## **Contributing**
 
-"We welcome contributions! Fork the repository, create a branch, and submit a pull request. Ensure that your contributions are well-documented and tested."
+We welcome contributions! Fork the repository, create a branch, and submit a pull request. Ensure that your contributions are well-documented and tested.
 
 ## **License**
 
-"This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details."
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
