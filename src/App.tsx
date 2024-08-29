@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import all_game_data from "./data.json";
+import all_game_data from "../public/countryData.json";
 import { GameDataPair } from "./types";
 import StatBar from "./components/StatBar";
 import QuestionPrompt from "./components/QuestionPrompt";
