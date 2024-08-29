@@ -2,6 +2,7 @@ import React from "react";
 import countryData from "../public/countryData.json";
 import { useEffect, useState } from "react";
 import StatBar from "./components/StatBar";
+import PromptAnswer from "./components/PromptAnswer";
 
 function App() {
   //Dark Mode Toggle
@@ -46,6 +47,7 @@ function App() {
           correct={0}
           incorrect={0}
         />
+        <PromptAnswer />
       </div>
     </>
   );
