@@ -1,4 +1,4 @@
-import StatBar_module from "./StatBar.module.scss";
+import React from "react";
 
 type Props = {
   currentQuestion: number;

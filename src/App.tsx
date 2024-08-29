@@ -1,18 +1,7 @@
+import React from "react";
+import countryData from "../public/countryData.json";
 import { useEffect, useState } from "react";
-import all_game_data from "../public/countryData.json";
-import { GameDataPair } from "./types";
 import StatBar from "./components/StatBar";
-import QuestionPrompt from "./components/QuestionPrompt";
-import Answer from "./components/Answer";
-
-type TheJson = typeof all_game_data;
-type DataField = TheJson["data"];
-type ArrayValues = DataField[number];
-
-const toGameDataPair = (entry: ArrayValues): GameDataPair => ({
-  ...entry,
-  capital: Array.isArray(entry.capital) ? entry.capital : [entry.capital],
-});
 
 function App() {
   //Dark Mode Toggle
@@ -37,8 +26,6 @@ function App() {
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [incorrectAnswers, setIncorrectAnswers] = useState(0);
 
-  const data = toGameDataPair(all_game_data.data[currentQuestionIdx]);
-
   return (
     <>
       <div className="h-screen bg-white dark:bg-black dark:text-white">
@@ -51,23 +38,7 @@ function App() {
 
         <div>
           <h1 className="text-xl font-bold">Welcome to Country Trivia!</h1>
-        </div>
-
-        <div>
-          <StatBar
-            currentQuestion={currentQuestionIdx + 1}
-            totalQuestions={all_game_data.data.length}
-            correct={correctAnswers}
-            incorrect={incorrectAnswers}
-          />
-        </div>
-
-        <div>
-          <QuestionPrompt data={data} />
-        </div>
-
-        <div>
-          <Answer />
+          <h2 className="text-xl font-bold">A web app by Rajiv Wallace</h1>
         </div>
       </div>
     </>
