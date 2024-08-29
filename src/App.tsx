@@ -38,8 +38,8 @@ function App() {
         </button>
 
         <div className="justify-center text-center p-3">
-          <h1 className="text-xl font-bold">Welcome to Country Trivia!</h1>
-          <h2 className="text-xl font-bold">A web app by Rajiv Wallace</h2>
+          <h1 className="text-2xl font-bold">Welcome to Country Trivia!</h1>
+          <h2 className="text-s font-bold">A web app by Rajiv Wallace</h2>
         </div>
         <StatBar
           currentQuestion={0}
