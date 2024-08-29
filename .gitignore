@@ -319,9 +319,5 @@ dist-ssr
 .eslintrc.cjs
 codux.config.json
 src/_codux
-vite.config.ts
-tsconfig.json
-vite-env.d.ts
 /component-templates
-tsconfig.node.json
 /public
