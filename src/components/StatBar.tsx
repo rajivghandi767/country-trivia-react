@@ -9,7 +9,7 @@ type Props = {
 
 function StatBar(props: Props) {
   return (
-    <div>
+    <div className="text-center">
       <p>
         Questions: {props.currentQuestion}/{props.totalQuestions}
       </p>

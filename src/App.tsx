@@ -40,6 +40,12 @@ function App() {
           <h1 className="text-xl font-bold">Welcome to Country Trivia!</h1>
           <h2 className="text-xl font-bold">A web app by Rajiv Wallace</h2>
         </div>
+        <StatBar
+          currentQuestion={0}
+          totalQuestions={0}
+          correct={0}
+          incorrect={0}
+        />
       </div>
     </>
   );
