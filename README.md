@@ -23,7 +23,7 @@ This project is a React/TypeScript web application translated from an existing P
 .
 ── 📁country-trivia-react
     └── 📁src
-        └── 📁components
+        └── 📁components                # Reusable UI components
             └── Answer.tsx
             └── QuestionPrompt.tsx
             └── StatBar.tsx
@@ -33,9 +33,9 @@ This project is a React/TypeScript web application translated from an existing P
         └── main.tsx
         └── types.ts
     └── index.html
-    └── Jenkinsfile
-    └── package.json
-    └── README.md
+    └── Jenkinsfile                     # Jenkins pipeline configuration
+    └── package.json                    # Dependencies
+    └── README.md                       # This file
 ```
 
 ## **Getting Started**
@@ -57,8 +57,6 @@ Steps to set up the project locally.
 
 ## **Docker Setup**
 
-Instructions for Dockerizing the application and running it on a Raspberry Pi.
-
 1. **Build Docker Image:**
    ```bash
    docker build -t country-trivia-react .
@@ -73,8 +71,6 @@ Instructions for Dockerizing the application and running it on a Raspberry Pi.
    - Run the container as above.
 
 ## **CI/CD Pipeline**
-
-Setting up Jenkins for continuous integration and deployment.
 
 1. **Jenkins Configuration:**
 
@@ -122,7 +118,7 @@ The key technologies and libraries used in the project.
 
 ## **Contributing**
 
-We welcome contributions! Fork the repository, create a branch, and submit a pull request. Ensure that your contributions are well-documented and tested.
+Contributions welcome! Fork the repository, create a branch, and submit a pull request. Ensure that your contributions are well-documented and tested.
 
 ## **License**
 
