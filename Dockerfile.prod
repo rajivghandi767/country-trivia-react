@@ -1,0 +1,13 @@
+FROM node:current-alpine
+WORKDIR /country-trivia-react-prod
+COPY package*.json .
+RUN npm install
+COPY . .
+
+RUN npm run build
+
+EXPOSE 5000
+
+USER node
+
+CMD ["npm","start"]
