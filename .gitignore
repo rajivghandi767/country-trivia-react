@@ -28,3 +28,4 @@ dist-ssr
 *.local
 
 *Dockerfile.dev
+*docker-compose.dev.yaml

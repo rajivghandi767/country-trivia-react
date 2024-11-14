@@ -8,8 +8,6 @@ COPY . .
 
 RUN npm run build
 
-USER node
-
-EXPOSE 4000
+EXPOSE 5000
 
 CMD ["npm","run","preview"]
