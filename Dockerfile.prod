@@ -1,25 +1,25 @@
-FROM node:22-alpine AS build
+# Use official Node.js image to build the frontend
+FROM node:23-alpine AS build
 
-# Set the working directory inside the container
-WORKDIR /country-trivia-react
+# Set up non-root user and working directory in a single step
+RUN addgroup -S app_group && adduser -S app -G app_group && \
+    mkdir -p /home/app/react && chown -R app:app_group /home/app/react
+WORKDIR /home/app/react
 
-# Copy package.json and package-lock.json (if available)
-COPY package.json package-lock.json ./
+# Switch to the non-root user
+USER app
 
-# Install dependencies
-RUN npm install
-
-# Copy the rest of the app's source code
-COPY . .
-
-# Build the app for production
-RUN npm run build
+# Install dependencies, copy project files, build, and clean unnecessary files in one layer
+COPY --chown=app:app_group package*.json ./
+RUN npm ci npm@latest && npm ci
+COPY --chown=app:app_group . .
+RUN npm run build && find /home/app/react -mindepth 1 -maxdepth 1 ! -name 'dist' -exec rm -rf {} +
 
 # Use Nginx to serve the built static files
 FROM nginx:alpine AS production
 
 # Copy built files from the build stage to the Nginx HTML directory
-COPY --from=build /country-trivia-react/dist /usr/share/nginx/html
+COPY --from=build /home/app/react/dist /usr/share/nginx/html
 
 # Expose port 80 to make the container accessible
 EXPOSE 80
